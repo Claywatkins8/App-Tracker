@@ -22,7 +22,7 @@ const router = express.Router();
 // Index
 router.get("/", function(req,res){
   // echo for testing
-  res.send("Index");
+  res.send("Home");
 });
 
 // New
