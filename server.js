@@ -2,7 +2,7 @@
 const express = require("express");
 
 /* ==== Internal Modules  ==== */
-
+const controllers = require("./controllers");
 /* ==== Instanced Modules  ==== */
 const app = express();
 
@@ -20,6 +20,9 @@ app.get("/", function(req, res){
     // .render(file,context)
     res.render("home");
   });
+
+  // author controller
+app.use("/companies", controllers.companies);
 
 /* ==== Server Listener  ==== */
 app.listen(PORT, function(){
