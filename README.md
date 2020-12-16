@@ -23,21 +23,19 @@ Organization MVC
 
 ### Description
 
-The Application Tracker App will take in any job application you have submitted online or in person, and track key components of this process. The user interface of the app makes it seemless to find all applications you have subbmited by company, date, or all applicactions.
-The app will track the following metrics:
+The Application Tracker App will take in any job application you have submitted online or in person, and track key components of this process. The user interface of the app makes it seemless to find all applications you have subbmited by company, date, or all applicactions.The app will track the following metrics:
 
 - Job title
 - Company
 - Location
 - Full description
-- Referances and their contact info / any notes
-- Resume & cover letter used for application
-- Date applied
+- References and their contact info / any notes
+- Resume & cover letter used for application- Date applied
 - Job posting URL
 
 ### Home Page
 
-When the user visits the Home Page of the app, they are greeted with a page that has a breif description of the app and a link to add a application.
+When the user visits the Home Page of the app, they are greeted with a page that has a brief description of the app and a link to add an application.
 
 <img src="WireFrames/Application Tracker - Home Page.png">
 
@@ -49,7 +47,7 @@ The add application page displays a form for the user to submit. This form will 
 
 ### Application Show Page
 
-This page will display all of the user submitted information about the currently selected application. There will be edit and delete buttons if the user decideds to change any information or remove the application all together.
+This page will display all of the user-submitted information about the currently selected application. There will be edit and delete buttons if the user decides to change any information or remove the application all together.
 
 <img src="WireFrames/Application Tracker - Application Show Page.png">
 
@@ -67,12 +65,12 @@ The Company page is where the user will be able to see a clickable list of all t
 
 ### Company Show Page
 
-This page will show the user every application they have submited to the selected company. The clickable application list will show the job title as well as the date applied. When a user clicks one of the job titles, the will be directed to the application show page.
+This page will show the user every application they have submitted to the selected company. The clickable application list will show the job title as well as the date applied. When a user clicks one of the job titles, the will be directed to the application show page.
 
 <img src="WireFrames/Application Tracker - Company Show Page.png">
 
 ### All Applications Show Page
 
-Users will be able to access this page at any time from the header. This will display a list of all companies that the user has applied to with a sub - list showing all jobs applied to at that company.
+Users will be able to access this page at any time from the header. This will display a list of all companies that the user has applied to with a sub-list showing all jobs applied to at that company.
 
 <img src="WireFrames/Application Tracker - All Applications Show Page.png">
