@@ -25,7 +25,7 @@ router.get("/", function(req,res){
 
 // Application Show
 router.get("/:id", function(req,res){
-    const id = request.params.id;
+    // const id = req.params.id;
 
     // db.Application.findById(id, function(err,foundApplication){
     //     if(err)  return res.send(err);
@@ -38,7 +38,7 @@ router.get("/:id", function(req,res){
     //  });
 
     db.Application
-    .findById(id)
+    .findById(req.params.id)
     .populate("companies")
     .exec(function (err, foundApplication) {
       if (err) return res.send(err);
@@ -52,13 +52,12 @@ router.get("/:id", function(req,res){
 
 // Application Edit
 router.get("/:id/edit", function(req,res){
-    const id = request.params.id;
 
-    db.Application.findById(id, function (err, foundApplication) {
+    db.Application.findById(request.params.id, function (err, foundApplication) {
 		if (err) return res.send(err);
 
 		const context = { application: foundApplication };
-		res.render("applications/applicationEditPage", context);
+		return res.render("applications/applicationEditPage", context);
 	});
 });
 
