@@ -29,6 +29,7 @@ app.get("/", function(req, res){
 
   // companies controller
 app.use("/companies", controllers.companies);
+app.use("/applications", controllers.applications);
 
 /* ==== Server Listener  ==== */
 app.listen(PORT, function(){

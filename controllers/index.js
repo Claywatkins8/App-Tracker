@@ -1,4 +1,5 @@
 module.exports = {
-    companies: require("./companies")
+    companies: require("./companies"),
+    applications: require("./applications"),
   }
   
