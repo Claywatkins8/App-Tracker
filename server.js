@@ -32,5 +32,5 @@ app.use("/companies", controllers.companies);
 
 /* ==== Server Listener  ==== */
 app.listen(PORT, function(){
-  console.log(`Blog Application is live at http://localhost:${PORT}/`)
+  console.log(`Application Tracker is live at http://localhost:${PORT}/`)
 });

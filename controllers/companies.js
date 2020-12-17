@@ -1,9 +1,12 @@
 // require express
 const express = require("express");
+const { companies } = require(".");
 // set up router
 const router = express.Router();
 
 
+// internal modules 
+const db = require("../models");
 
 // base route /authors
 
@@ -19,22 +22,32 @@ const router = express.Router();
 */
 
 
-// Index
+// applications by company page
 router.get("/", function(req,res){
-  // echo for testing
-  res.send("Home");
+//  mongoose code
+db.Company.find({}, function(err, allCompanies){
+  if (err) return res.send(err);
+  const context = {companies: allCompanies}
+  return res.render("companies/appByCompany")
+})
 });
 
-// New
+// Add Application Page
 router.get("/new", function(req,res){
-  // echo for testing
-  res.send("New");
+res.render("companies/addApplicationPage")
 });
 
-// Show
+// Company Show Page
 router.get("/:id", function(req,res){
-  // echo for testing
-  res.send({id: req.params.id});
+  db.Company
+  .findById(req.params.id)
+  .populate("companies")
+  .exec(function (err, foundCompany) {
+    if (err) return res.send(err);
+    
+    const context = { company: foundCompany };
+    return res.render("companies/companyShowPage", context);
+  })
 });
 
 // Create
@@ -42,26 +55,6 @@ router.post("/", function(req,res){
   // echo for testing
   res.send({body: req.body, msg:"Create"});
 });
-
-// Edit
-router.get("/:id/edit", function(req,res){
-  // echo for testing
-  res.send("Edit Form");
-});
-
-// Update
-router.put("/:id", function(req,res){
-  // echo for testing
-  res.send({id: req.params.id, body: req.body});
-});
-
-// Delete
-router.delete("/:id", function(req,res){
-  // echo for testing
-  res.send({id: req.params.id, msg: "Delete"});
-});
-
-//...
 
 
 
