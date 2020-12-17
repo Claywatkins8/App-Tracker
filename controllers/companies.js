@@ -1,9 +1,12 @@
 // require express
 const express = require("express");
+const { companies } = require(".");
 // set up router
 const router = express.Router();
 
 
+// internal modules 
+const db = require("../models");
 
 // base route /authors
 
@@ -19,10 +22,14 @@ const router = express.Router();
 */
 
 
-// Index
+// applications by company page
 router.get("/", function(req,res){
-  // echo for testing
-  res.send("Home");
+//  mongoose code
+db.Company.find({}, function(err, allCompanies){
+  if (err) return res.send(err);
+  const context = {companies: allCompanies}
+  return res.render("companies/appByCompany")
+})
 });
 
 // New
