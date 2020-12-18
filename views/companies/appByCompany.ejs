@@ -51,11 +51,12 @@
   </nav>
   <body>
     <h1 class="text-center">Applications by Company</h1>
-    <div class="row align-items-center">
+
+    <div class="list-group">
       <ul>
         <% companies.forEach(company => { %>
         <li>
-          <a class="col" href="/companies/<%= company._id %>">
+          <a class="col" href="applications/<%= company._id %>">
             <%= company.name %>
           </a>
         </li>
