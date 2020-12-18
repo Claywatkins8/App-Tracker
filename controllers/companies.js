@@ -32,10 +32,6 @@ db.Company.find({}, function(err, allCompanies){
 })
 });
 
-// Add Application Page
-router.get("/new", function(req,res){
-res.render("companies/addApplicationPage")
-});
 
 // Company Show Page
 router.get("/:id", function(req,res){
@@ -50,12 +46,6 @@ router.get("/:id", function(req,res){
   })
 });
 
-
-// Create
-router.post("/", function(req,res){
-  // echo for testing
-  res.send({body: req.body, msg:"Create"});
-});
 
 
 
