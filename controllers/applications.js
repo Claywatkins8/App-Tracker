@@ -19,6 +19,7 @@ router.get("/", function(req,res){
       
       const context = { applications: foundApplications };
       return res.render("applications/applicationShowPage", context);
+      
     });
   });
 
