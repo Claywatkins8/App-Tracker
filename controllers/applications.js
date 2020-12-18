@@ -9,12 +9,11 @@ const db = require("../models");
 
 // NOTE INDEX All Application Show Page
 router.get("/", function (req, res) {
-
-	db.Application.find({}, function (error, foundApplications) {
+	db.Company.find({}).populate("applications").exec(function (error, foundCompany) {
 		if (error) return res.send(error);
 
 		const context = {
-			applications: foundApplications,
+			companies: foundCompany,
 		};
 
 		res.render("applications/allApplicationShowPage", context);
@@ -23,7 +22,11 @@ router.get("/", function (req, res) {
 
   // NOTE NEW Add Application Page
 router.get("/new", function(req,res){
+  // db.Company.find({createdBy: req.session.currentUser.id}, function (err, foundCompanies) {
+  //   if (err) return res.send(err);
 
+  //   const context = {companies: foundCompanies};
+  // });
   res.render("applications/addApplicationPage");
   });
 
