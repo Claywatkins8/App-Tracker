@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Application Show Page</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link up css -->
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- Link up scripts -->
+    <script src="/scripts/app.js" defer></script>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Application Tracker</title>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Application Tracker</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/companies/">Companies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/applications/">All Applications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/applications/new">New Application</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <body>
+    <h1>Application SHow Page</h1>
+    <!-- Show App Info by ID -->
+    <div class="container">
+      <!-- First row -->
+      <div class="row align-items-center">
+        <div class="col">Job Title: <%= application.jobTitle %></div>
+        <div class="col">Company: <%= application.company %></div>
+        <div class="col">Location: <%= application.location %></div>
+        <div class="col">Remote: <%= application.remote %></div>
+      </div>
+      <!-- Second Row -->
+      <div class="row align-items-center">
+        <div class="col">Date Applied: <%= application.dateApplied %></div>
+        <div class="col">Posting URL: <%= application.postingUrl %></div>
+        <div class="col">Resume: <%= application.resume %></div>
+        <div class="col">Cover Letter: <%= application.coverLetter %></div>
+      </div>
+      <!-- Third Row -->
+      <div class="row align-items-center">
+        <div class="col">
+          Reference nav-item: <%= application.referenceName %>
+        </div>
+        <div class="col">Phone: <%= application.referencePhone %></div>
+        <div class="col">Email: <%= application.referenceEmail %></div>
+        <div class="col">LinkedIn: <%= application.referenceLinkedIn %></div>
+      </div>
+      <!-- full Job Description box -->
+      <div class="row align-items-center">
+        <div class="col">
+          Job Description: <%= application.fullJobDescription %>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

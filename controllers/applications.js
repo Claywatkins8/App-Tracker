@@ -25,7 +25,7 @@ router.get("/new", function(req,res){
   res.render("applications/addApplicationPage")
   });
 
-  
+
 
 // SHOW Individual Application Show
 router.get("/:id", function(req,res){
@@ -33,14 +33,13 @@ router.get("/:id", function(req,res){
 
   db.Application
   .findById(req.params.id)
-  .populate("company")
+  .populate("application")
   .exec(function (err, foundApplication) {
     if (err) return res.send(err);
     
     const context = { application: foundApplication };
     return res.render("applications/applicationShowPage", context);
   });
-
 });
  
  
