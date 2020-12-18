@@ -56,29 +56,24 @@
       <div class="list-group">
         <% companies.forEach(company => { %>
         <a
-          href="/applications/<%= company._id %>"
+          href="companies/<%= company._id %>"
           class="list-group-item list-group-item-action"
         >
           <%= company.name %>
         </a>
-        <% }) %> 
-      </div>
+        <!-- Nested Jobs -->
 
+        <% company.applications.forEach(application => { %>
 
-
-        <ul>
-        <% companies.forEach(company => { %>
-   <li>
-          <% company.applications.forEach(application => { %>
-            <p> <%= application.jobTitle %>  </p>
-         <% }); %>
+        <a
+          href="/applications/<%= application._id %>"
+          class="list-group-item list-group-item-action"
+        >
+          - <%= application.jobTitle %>
         </a>
-      </li>
-        <% }) %>
-      </ul>
 
-
-
+        <% }); %> <% }) %>
+      </div>
     </main>
   </body>
 </html>
