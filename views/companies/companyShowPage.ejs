@@ -52,16 +52,20 @@
 
   <body>
     <h1>Company Show Page</h1>
+
+    <h3><%= companies.name %></h3>
     <main>
       <div class="list-group">
-        <% companies.forEach(application => { %>
+        <% companies.applications.forEach(application => { %>
+
         <a
           href="/applications/<%= application._id %>"
           class="list-group-item list-group-item-action"
         >
-          <%= application.jobTitle %> - <%= application.company.name %>
+          <%= application.jobTitle %>
         </a>
-        <% }) %>
+
+        <% }); %>
       </div>
     </main>
   </body>
