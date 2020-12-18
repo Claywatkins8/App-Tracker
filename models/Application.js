@@ -22,13 +22,14 @@ const applicationSchema = mongoose.Schema(
 			
         },
         resume: {
-			type: String,
+			type: Buffer,
 			
         },
         coverLetter: {
-			type: String,
+			type: Buffer,
 			
         },
+    
         dateApplied: {
 			type: Date,
 			
