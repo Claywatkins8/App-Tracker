@@ -3,9 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- Link up css -->
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- Link up scripts -->
+    <script src="/scripts/app.js" defer></script>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Application Tracker</title>
   </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Application Tracker</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/companies/">Companies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/applications/">All Applications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/companies/new">New Application</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <body>
-    <h1>App by company test</h1>
+    <h1 class="text-center">Applications by Company</h1>
+    <div class="row align-items-center">
+      <ul>
+        <% companies.forEach(company => { %>
+        <li>
+          <a class="col" href="/companies/<%= company._id %>">
+            <%= company.name %>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+
+      <% if(companies.length === 0) { %>
+      <p>There are no Companies available yet.</p>
+      <% } %>
+    </div>
   </body>
 </html>
