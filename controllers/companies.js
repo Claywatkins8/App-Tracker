@@ -1,6 +1,6 @@
 // require express
 const express = require("express");
-const { companies } = require(".");
+
 // set up router
 const router = express.Router();
 
@@ -28,7 +28,7 @@ router.get("/", function(req,res){
 db.Company.find({}, function(err, allCompanies){
   if (err) return res.send(err);
   const context = {companies: allCompanies}
-  return res.render("companies/appByCompany")
+  return res.render("companies/appByCompany", context)
 })
 });
 
