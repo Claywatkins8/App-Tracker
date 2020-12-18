@@ -98,11 +98,13 @@ router.put("/:id", function(req,res){
 
 // Delete
 router.delete("/:id", function(req,res){
-  // echo for testing
-  res.send({id: req.params.id, msg: "Delete"});
-});
 
-//...
+  db.Application.findByIdAndDelete(req.params.id, function (err, deletedApplication) {
+		if (err) return res.send(err);
+
+			return res.redirect("/applications");
+	});
+});
 
 
 
