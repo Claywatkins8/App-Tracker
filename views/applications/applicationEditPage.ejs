@@ -11,7 +11,7 @@
     <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
     <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
-    <script defer src = "javascripts/fileUpload.js"></script>
+    <script defer src = "../../public/javascripts/fileUpload.js"></script>
     <!-- Link up css -->
     <link rel="stylesheet" href="/styles/main.css" />
     <!-- Link up scripts -->
@@ -127,12 +127,12 @@
           <div class="form-row">
           <div class="form-group">
             <label for="exampleFormControlFile1">Resume Used:</label>
-            <input type="file" name="resume"  value="<%= application.resume %> " class="form-control-file" />
+            <input type="file" name="resume"  value="<%= application.resume %> " class="form-control-file filepond" />
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlFile1">Cover Letter Used:</label>
-            <input type="file" name="coverLetter"  value="<%= application.coverLetter %> " class="form-control-file" />
+            <input type="file" name="coverLetter"  value="<%= application.coverLetter %> " class="form-control-file filepond" />
           </div>
 
       </div>
