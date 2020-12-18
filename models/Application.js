@@ -9,9 +9,14 @@ const applicationSchema = mongoose.Schema(
 			type: String,
 			required: [true, "You must provide a name property"],
         },
+        company: {
+			type: String,
+        },	
         location: {
 			type: String,
         },	
+        remote: Boolean,
+
         postingUrl: {
 			type: String,
 			
@@ -28,6 +33,8 @@ const applicationSchema = mongoose.Schema(
 			date: String,
 			
         },
+        notes: String,
+        
         referenceName: {
 			type: String,
 			

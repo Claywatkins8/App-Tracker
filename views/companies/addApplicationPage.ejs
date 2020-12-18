@@ -38,10 +38,10 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="companies/">Companies</a>
+          <a class="nav-link" href="/companies/">Companies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="applications/">All Applications</a>
+          <a class="nav-link" href="/applications/">All Applications</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/companies/new">New Application</a>
@@ -51,15 +51,17 @@
   </nav>
 
   <body>
+
+    <!-- Add Application Form -->
+    <form action="/companies" method="POST">
     <section>
-      <form>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="jobposting">Job Posting Title</label>
             <input
               type="text"
               class="form-control"
-              id="inputEmail4"
+              name="jobTitle"
               placeholder="Software Engineer"
             />
           </div>
@@ -68,7 +70,7 @@
             <input
               type="text"
               class="form-control"
-              id="inputPassword4"
+              name="company"
               placeholder="Google"
             />
           </div>
@@ -79,13 +81,13 @@
             <input
               type="text"
               class="form-control"
-              id="inputEmail4"
+              name = "location"
               placeholder="Seattle, WA"
             />
           </div>
           <div class="form-group col-md-3">
             <label>Remote</label>
-            <select id="inputState" class="form-control">
+            <select name="remote" class="form-control">
               <option selected>Choose...</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
@@ -95,32 +97,31 @@
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="jobposting">Date Applied</label>
-            <input type="text" class="form-control" placeholder="01/01/2020" />
+            <input type="text" name="dateApplied" class="form-control" placeholder="01/01/2020" />
           </div>
           <div class="form-group col-md-3">
             <label for="inputPassword4">Posting URL</label>
             <input
               type="text"
               class="form-control"
-              id="inputPassword4"
+              name="postingUrl"
               placeholder="Google.com/jobs"
             />
           </div>
         </div>
         <!-- Upload Resume/Cover Letter -->
-        <form>
+
           <div class="form-row">
           <div class="form-group">
             <label for="exampleFormControlFile1">Resume Used:</label>
-            <input type="file" class="form-control-file" />
+            <input type="file" name="resume" class="form-control-file" />
           </div>
-        </form>
-        <form>
+
           <div class="form-group">
             <label for="exampleFormControlFile1">Cover Letter Used:</label>
-            <input type="file" class="form-control-file" />
+            <input type="file" name="coverLetter" class="form-control-file" />
           </div>
-        </form>
+
       </div>
       <!-- Full Job Description -->
       <div class="form-row">
@@ -129,7 +130,7 @@
         <input
           type="text"
           class="form-control"
-          id="inputEmail4"
+          name="fullJobDescription"
           placeholder="Software Engineer"
         />
       </div>
@@ -138,14 +139,14 @@
       <div class="form-row">
         <div class="form-group col-md-3">
           <label for="jobposting">Reference Name</label>
-          <input type="text" class="form-control" placeholder="John Smith" />
+          <input type="text" name="referenceName" class="form-control" placeholder="John Smith" />
         </div>
         <div class="form-group col-md-3">
           <label for="inputPassword4">Phone:</label>
           <input
             type="text"
             class="form-control"
-            id="inputPassword4"
+            name="referencePhone"
             placeholder="(123) 456-7890"
           />
         </div>
@@ -154,7 +155,7 @@
           <input
             type="text"
             class="form-control"
-            id="inputPassword4"
+            name="referenceEmail"
             placeholder="Smith.John@DreamCompany.com"
           />
         </div>
@@ -163,7 +164,7 @@
           <input
             type="text"
             class="form-control"
-            id="inputPassword4"
+            name="referenceLinkedIn"
             placeholder="LinkedIn.com/JohnSmith"
           />
         </div>
@@ -175,7 +176,7 @@
           <input
             type="text"
             class="form-control"
-            id="inputEmail4"
+            name="notes"
             placeholder=""
           />
         </div>
