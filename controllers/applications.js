@@ -7,23 +7,27 @@ const router = express.Router();
 const db = require("../models");
 
 
-// All Application Show Page
-router.get("/", function(req,res){
+// NOTE INDEX All Application Show Page
+router.get("/", function (req, res) {
+	db.Application.find({}, function (error, foundApplications) {
+		if (error) return res.send(error);
 
-   
-    db.Application
-    .findById(req.params.id)
-    .populate("company")
-    .exec(function (err, foundApplications) {
-      if (err) return res.send(err);
-      
-      const context = { applications: foundApplications };
-      return res.render("applications/applicationShowPage", context);
-      
-    });
+		const context = {
+			applications: foundApplications,
+		};
+
+		res.render("applications/allApplicationShowPage", context);
+	});
+});
+
+  // NOTE NEW Add Application Page
+router.get("/new", function(req,res){
+  res.render("applications/addApplicationPage")
   });
 
-//  Individual Application Show
+  
+
+// SHOW Individual Application Show
 router.get("/:id", function(req,res){
 
 
@@ -49,6 +53,25 @@ router.get("/:id/edit", function (req, res) {
 		res.render("applications/applicationEditPage", context);
 	});
 });
+
+// Add Application Page
+router.get("/new", function(req,res){
+  res.render("applications/addApplicationPage")
+  });
+
+//NOTE Create
+router.post("/", function (req, res) {
+	//mongoose
+	db.Application.create(req.body, function (err, createdArticle) {
+		if (err) return res.send(err);
+
+		// allow us to add an article to the author
+		
+			return res.redirect("/");
+		});
+
+		
+	});
 
 
 
