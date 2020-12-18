@@ -57,8 +57,7 @@
         <% applications.forEach(application => { %>
         <a
           href="/applications/<%= application._id %>"
-          class="list-group-item list-group-item-action"
-        >
+          class="list-group-item list-group-item-action">
           <%= application.jobTitle %> - <%= application.company.name %>
         </a>
         <% }) %>
