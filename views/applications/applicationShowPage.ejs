@@ -59,7 +59,7 @@
       <!-- First row -->
       <div class="row align-items-center">
         <div class="col">Job Title: <%= application.jobTitle %></div>
-        <div class="col">Company: <%= application.company %></div>
+        <div class="col">Company: <%= application.company.name %></div>
         <div class="col">Location: <%= application.location %></div>
         <div class="col">Remote: <%= application.remote %></div>
       </div>
@@ -73,7 +73,7 @@
       <!-- Third Row -->
       <div class="row align-items-center">
         <div class="col">
-          Reference nav-item: <%= application.referenceName %>
+          Reference Name: <%= application.referenceName %>
         </div>
         <div class="col">Phone: <%= application.referencePhone %></div>
         <div class="col">Email: <%= application.referenceEmail %></div>

@@ -10,7 +10,11 @@ const companySchema = new mongoose.Schema(
 			required: [true, "You must provide a name value"],
 		},
 		applications: [{ type: mongoose.Schema.Types.ObjectId, ref: "Application" }],
-		companyHq: String,
+		// companyHq: String,
+		// createdBy: {
+		// 	type: mongoose.Schema.Types.ObjectId,
+		// 	ref: "User"
+		// }
 	},
 	{
 		timestamps: true,

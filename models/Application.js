@@ -10,7 +10,7 @@ const applicationSchema = mongoose.Schema(
 			required: [true, "You must provide a name property"],
         },
         company: {
-			type: String,
+			type: mongoose.Schema.Types.ObjectId, ref: "Company", 
         },	
         location: {
 			type: String,
@@ -30,7 +30,7 @@ const applicationSchema = mongoose.Schema(
 			
         },
         dateApplied: {
-			date: String,
+			type: Date,
 			
         },
         notes: String,
