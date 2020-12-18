@@ -42,23 +42,7 @@ router.get("/:id", function(req,res){
   });
 });
  
- 
-  // Application Edit
-router.get("/:id/edit", function (req, res) {
-	db.Application.findById(req.params.id, function (err, foundApplication) {
-		if (err) return res.send(err);
-
-		const context = { application: foundApplication };
-		res.render("applications/applicationEditPage", context);
-	});
-});
-
-// Add Application Page
-router.get("/new", function(req,res){
-  res.render("applications/addApplicationPage")
-  });
-
-//NOTE Create
+//NOTE CREATE
 router.post("/", function (req, res) {
 	//mongoose
 	db.Application.create(req.body, function (err, createdArticle) {
@@ -70,33 +54,41 @@ router.post("/", function (req, res) {
 		});
 
 		
+	}); 
+
+
+  //EDIT Application Edit
+router.get("/:id/edit", function (req, res) {
+	db.Application.findById(req.params.id, function (err, foundApplication) {
+		if (err) return res.send(err);
+
+		const context = { application: foundApplication };
+		res.render("applications/applicationEditPage", context);
 	});
-
-
-
-
-// Update
-router.put("/:id", function(req,res){
-    const id = request.params.id;
-    db.Application.findByIdAndUpdate(id, 
-        id,
-        {
-            $set:{
-                ...req.body,
-            }
-        },
-        { new: true },
-        function (err, updateApplication){
-            if(err) return res.send(err);
-
-            return res.redirect(`/applications/${updateApplication._id}`)
-        }
-        
-        );
-
 });
 
-// Delete
+
+
+
+// UPDATE
+router.put("/:id", function (req, res) {
+	db.Application.findByIdAndUpdate(
+		req.params.id,
+		{
+			$set: {
+				...req.body,
+			},
+		},
+		{ new: true },
+		function (err, updatedApplication) {
+			if (err) return res.send(err);
+
+			return res.redirect(`/applications/${updatedApplication._id}`);
+		}
+	);
+});
+
+// DELETE
 router.delete("/:id", function(req,res){
 
   db.Application.findByIdAndDelete(req.params.id, function (err, deletedApplication) {
