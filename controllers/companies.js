@@ -1,6 +1,6 @@
 // require express
 const express = require("express");
-const { companies } = require(".");
+
 // set up router
 const router = express.Router();
 
@@ -28,14 +28,10 @@ router.get("/", function(req,res){
 db.Company.find({}, function(err, allCompanies){
   if (err) return res.send(err);
   const context = {companies: allCompanies}
-  return res.render("companies/appByCompany")
+  return res.render("companies/appByCompany", context)
 })
 });
 
-// Add Application Page
-router.get("/new", function(req,res){
-res.render("companies/addApplicationPage")
-});
 
 // Company Show Page
 router.get("/:id", function(req,res){
@@ -50,12 +46,6 @@ router.get("/:id", function(req,res){
   })
 });
 
-
-// Create
-router.post("/", function(req,res){
-  // echo for testing
-  res.send({body: req.body, msg:"Create"});
-});
 
 
 

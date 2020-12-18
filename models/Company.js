@@ -7,7 +7,7 @@ const companySchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
-			required: [true, "You must provide a name property"],
+			required: [true, "You must provide a name value"],
 		},
 		applications: [{ type: mongoose.Schema.Types.ObjectId, ref: "Application" }],
 		companyHq: String,

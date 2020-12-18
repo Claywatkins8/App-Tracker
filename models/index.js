@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 // connection string
-const dbUrl = "mongodb://localhost:27017/blog"
+const dbUrl = "mongodb://localhost:27017/application-tracker"
 
 // connnect
 mongoose.connect(dbUrl, {
