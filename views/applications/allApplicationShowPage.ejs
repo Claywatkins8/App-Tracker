@@ -38,34 +38,31 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="companies/">Applications by Company</a>
+          <a class="nav-link" href="/companies/">Applications by Company</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="applications/">All Applications</a>
+          <a class="nav-link" href="/applications/">All Applications</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/companies/new">Add Applications</a>
+          <a class="nav-link" href="/applications/new">Add Applications</a>
         </li>
       </ul>
     </div>
   </nav>
 
   <body>
-        <h1>All Current Applications</h1>
-        <main>
-             
-
-                <div class="list-group">
-                        <a href="/companies/<%= company._id %>" class="list-group-item list-group-item-action active">
-                          compamy name
-                        </a>
-                        <% applications.forEach(application => { %>
-                          <a href="/applications/<%= application._id %>" class="list-group-item list-group-item-action">
-                            <%= application.jobTitle %> -  <%= application.dateApplied %>
-                          </a>
-                        <% }) %>
-                </div>
-        </main>
+    <h1>All Current Applications</h1>
+    <main>
+      <div class="list-group">
+        <% applications.forEach(application => { %>
+        <a
+          href="/applications/<%= application._id %>"
+          class="list-group-item list-group-item-action"
+        >
+          <%= application.jobTitle %> - <%= application.location %>
+        </a>
+        <% }) %>
+      </div>
+    </main>
   </body>
 </html>
-

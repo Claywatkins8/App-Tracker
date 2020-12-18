@@ -44,16 +44,16 @@
           <a class="nav-link" href="/applications/">All Applications</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/companies/new">New Application</a>
+          <a class="nav-link" href="/applications/new">New Application</a>
         </li>
       </ul>
     </div>
   </nav>
 
   <body>
-     <h1> <%= application.jobTitle %> </h1>
-    <!-- Add Application Form -->
-    <form action="/companies" method="POST">
+
+    <!-- Edit Application Form -->
+    <form action="/applications/<%= application._id %>?_method=PUT" method="POST">
     <section>
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -63,6 +63,7 @@
               class="form-control"
               name="jobTitle"
               placeholder="Software Engineer"
+              value="<%= application.jobTitle %> "
             />
           </div>
           <div class="form-group col-md-3">
@@ -72,6 +73,7 @@
               class="form-control"
               name="company"
               placeholder="Google"
+              value="<%= application.company %> "
             />
           </div>
         </div>
@@ -83,21 +85,22 @@
               class="form-control"
               name = "location"
               placeholder="Seattle, WA"
+              value="<%= application.location %> "
             />
           </div>
           <div class="form-group col-md-3">
             <label>Remote</label>
             <select name="remote" class="form-control">
-              <option selected>Choose...</option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
+              <option selected> <%= application.remote %>  </option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
             </select>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="jobposting">Date Applied</label>
-            <input type="text" name="dateApplied" class="form-control" placeholder="01/01/2020" />
+            <input type="date" name="dateApplied"  value="<%= application.dateApplied %> " class="form-control" placeholder="01/01/2020" />
           </div>
           <div class="form-group col-md-3">
             <label for="inputPassword4">Posting URL</label>
@@ -106,6 +109,7 @@
               class="form-control"
               name="postingUrl"
               placeholder="Google.com/jobs"
+              value="<%= application.postingUrl %> "
             />
           </div>
         </div>
@@ -114,12 +118,12 @@
           <div class="form-row">
           <div class="form-group">
             <label for="exampleFormControlFile1">Resume Used:</label>
-            <input type="file" name="resume" class="form-control-file" />
+            <input type="file" name="resume"  value="<%= application.resume %> " class="form-control-file" />
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlFile1">Cover Letter Used:</label>
-            <input type="file" name="coverLetter" class="form-control-file" />
+            <input type="file" name="coverLetter"  value="<%= application.coverLetter %> " class="form-control-file" />
           </div>
 
       </div>
@@ -132,6 +136,7 @@
           class="form-control"
           name="fullJobDescription"
           placeholder="Software Engineer"
+          value="<%= application.fullJobDescription %> "
         />
       </div>
     </div>
@@ -139,7 +144,7 @@
       <div class="form-row">
         <div class="form-group col-md-3">
           <label for="jobposting">Reference Name</label>
-          <input type="text" name="referenceName" class="form-control" placeholder="John Smith" />
+          <input type="text" name="referenceName"  value="<%= application.referenceName %> " class="form-control" placeholder="John Smith" />
         </div>
         <div class="form-group col-md-3">
           <label for="inputPassword4">Phone:</label>
@@ -148,6 +153,7 @@
             class="form-control"
             name="referencePhone"
             placeholder="(123) 456-7890"
+            value="<%= application.referencePhone %> "
           />
         </div>
         <div class="form-group col-md-3">
@@ -157,6 +163,7 @@
             class="form-control"
             name="referenceEmail"
             placeholder="Smith.John@DreamCompany.com"
+            value="<%= application.referenceEmail %> "
           />
         </div>
         <div class="form-group col-md-3">
@@ -166,6 +173,7 @@
             class="form-control"
             name="referenceLinkedIn"
             placeholder="LinkedIn.com/JohnSmith"
+            value="<%= application.referenceLinkedIn %> "
           />
         </div>
       </div>
@@ -178,11 +186,13 @@
             class="form-control"
             name="notes"
             placeholder=""
+            value="<%= application.notes %> "
           />
         </div>
       </div>
+      <!-- Edit PUT Form -->
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="submit" class="btn btn-primary" value="Update">
       </div>
       </form>
     </section>
