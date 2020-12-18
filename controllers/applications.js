@@ -10,15 +10,15 @@ const db = require("../models");
 // All Application Show Page
 router.get("/", function(req,res){
 
-    db.Application.find({}, function(err,foundApplications){
-       if(err)  return res.send(err);
-           
-       const context = {
-          applications: foundApplications,
-       };
-       
-  
-        return res.render("applications/allApplicationShowPage", context);
+   
+    db.Application
+    .findById(req.params.id)
+    .populate("company")
+    .exec(function (err, foundApplications) {
+      if (err) return res.send(err);
+      
+      const context = { applications: foundApplications };
+      return res.render("applications/applicationShowPage", context);
     });
   });
 
@@ -28,7 +28,7 @@ router.get("/:id", function(req,res){
 
   db.Application
   .findById(req.params.id)
-  .populate("companies")
+  .populate("company")
   .exec(function (err, foundApplication) {
     if (err) return res.send(err);
     
