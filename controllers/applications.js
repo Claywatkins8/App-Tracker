@@ -49,7 +49,10 @@ router.get("/:id", function(req,res){
  
 //NOTE CREATE
 router.post("/", function (req, res) {
+
   db.Company.findOne({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, foundCompany){
+
+
     if(err) return res.send(err);
     if (foundCompany) {
       req.body.company = foundCompany._id;
@@ -89,6 +92,10 @@ router.post("/", function (req, res) {
     }
   })
 });
+
+
+
+
 
   //EDIT Application Edit
 router.get("/:id/edit", function (req, res) {
