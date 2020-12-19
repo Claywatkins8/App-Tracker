@@ -56,7 +56,11 @@ const applicationSchema = mongoose.Schema(
         fullJobDescription: {
         type: String,
         
-        },   
+        }, 
+        createdBy: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "User"
+		}  
         	
     },
 	{

@@ -45,6 +45,7 @@ app.use(
   )
 );
 
+
 // logger 
 app.use(function(req,res,next){
  
@@ -80,3 +81,4 @@ app.use("/applications", authRequired, controllers.applications);
 app.listen(PORT, function(){
   console.log(`Application Tracker is live at http://localhost:${PORT}/`)
 });
+

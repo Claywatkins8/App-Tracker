@@ -25,7 +25,7 @@ const db = require("../models");
 // applications by company page
 router.get("/", function(req,res){
 //  mongoose code
-db.Company.find({}, function(err, allCompanies){
+db.Company.find({createdBy: req.session.currentUser.id}, function(err, allCompanies){
   if (err) return res.send(err);
   const context = {companies: allCompanies}
   return res.render("companies/appByCompany", context)
