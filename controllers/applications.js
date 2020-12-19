@@ -9,7 +9,7 @@ const db = require("../models");
 
 // NOTE INDEX All Application Show Page
 router.get("/", function (req, res) {
-	db.Company.find({}).populate("applications").exec(function (error, foundCompany) {
+	db.Company.find({createdBy: req.session.currentUser.id}).populate("applications").exec(function (error, foundCompany) {
 		if (error) return res.send(error);
 
 		const context = {
@@ -49,27 +49,28 @@ router.get("/:id", function(req,res){
  
 //NOTE CREATE
 router.post("/", function (req, res) {
-  db.Company.findOne({name: req.body.company}, function (err, foundCompany){
+  db.Company.findOne({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, foundCompany){
     if(err) return res.send(err);
     if (foundCompany) {
       req.body.company = foundCompany._id;
+      req.body.createdBy = req.session.currentUser.id
       // mongoose
-	  db.Application.create(req.body, function (err, createdApplication) {
-      if (err) return res.send(err);
+      db.Application.create(req.body, function (err, createdApplication) {
+        if (err) return res.send(err);
     
       // update the company applications array
       foundCompany.applications.push(createdApplication._id);
       // adds the application to the company
 			foundCompany.save(); // saves to db
      
-    return res.redirect("/");
+    return res.redirect("/applications/");
 		});
     } else {
-      db.Company.create({name: req.body.company}, function (err, createdCompany){
+      db.Company.create({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, createdCompany){
 
         if(err) return res.send(err);
         req.body.company = createdCompany._id;
-    
+        req.body.createdBy = req.session.currentUser.id
         // mongoose
         db.Application.create(req.body, function (err, createdApplication) {
           if (err) return res.send(err);
@@ -81,13 +82,12 @@ router.post("/", function (req, res) {
           // adds the application to the company
           foundCompany.save(); // saves to db
          
-        return res.redirect("/");
+        return res.redirect("/applications/");
         });
       });
       })
     }
   })
- 
 });
 
   //EDIT Application Edit
