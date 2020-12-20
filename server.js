@@ -4,6 +4,26 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
+
+// const multer = require("multer");
+
+
+// const _storage = multer.diskStorage({
+//    destination: function(req,file,cd){
+//      cd(null, "/public/uploads/");
+//    },
+//    filename: function (req, file, cb) {
+    
+//      cd(null, file.originalname);
+//    }
+// })
+
+// const upload = multer({storage:'_storage'});
+// const fs = require("fs");
+
+
+
+
 /* ==== Internal Modules  ==== */
 const controllers = require("./controllers");
 
@@ -64,6 +84,11 @@ app.use(function(req,res,next){
 
 const authRequired = require("./middleware/authRequired");
 
+
+//multer
+// app.post("/applications", upload.single("resume"), (req,res) => {
+//   res.send(req.file.filename);
+// });
 
 /* ==== Routes/Controllers  ==== */
 app.get("/", function(req, res){
