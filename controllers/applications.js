@@ -52,11 +52,12 @@ router.post("/", function (req, res) {
 
   db.Company.findOne({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, foundCompany){
 
-
     if(err) return res.send(err);
+   
     if (foundCompany) {
       req.body.company = foundCompany._id;
       req.body.createdBy = req.session.currentUser.id
+      
       // mongoose
       db.Application.create(req.body, function (err, createdApplication) {
         if (err) return res.send(err);
@@ -69,6 +70,7 @@ router.post("/", function (req, res) {
     return res.redirect("/applications/");
 		});
     } else {
+      
       db.Company.create({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, createdCompany){
 
         if(err) return res.send(err);
