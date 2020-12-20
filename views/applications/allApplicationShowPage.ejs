@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- Link up upload file -filePond -->
+     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+     <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+     <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
+     <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+     <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+     <script defer src = "../../public/javascripts/fileUpload.js"></script>
     <!-- Link up css -->
     <link rel="stylesheet" href="/styles/main.css" />
     <!-- Link up scripts -->
@@ -51,13 +59,13 @@
   </nav>
 
   <body>
-    <h1>All Current Applications</h1>
+    <h1 class="allApp-h1">All Current Applications</h1>
     <main>
-      <div class="list-group">
+      <div class="list-group allApp-list">
         <% companies.forEach(company => { %>
         <a
           href="/companies/<%= company._id %>"
-          class="list-group-item list-group-item-action"
+          class= "list-group-item active allapp-company" aria-current="true"
         >
           <%= company.name %>
         </a>
@@ -73,7 +81,10 @@
         </a>
 
         <% }); %> <% }) %>
+
       </div>
     </main>
+
+    
   </body>
 </html>
