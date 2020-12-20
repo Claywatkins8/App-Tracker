@@ -51,13 +51,15 @@
   </nav>
 
   <body>
-    <h1>Test Home Page</h1>
+    <h1 class="text-center">Home Page</h1>
 
     <ul>
       <% if (user) { %>
-      <h3><%= user.username %></h3>
+      <h3 class="text-center">Welcome back <%= user.username %></h3>
       <form action="/logout?_method=DELETE" method="POST">
-        <input type="submit" value="Logout" />
+        <div class="text-center">
+          <input type="submit" value="Logout" />
+        </div>
       </form>
 
       <% } else { %>

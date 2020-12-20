@@ -53,17 +53,16 @@
     <h1 class="text-center">Applications by Company</h1>
 
     <div class="list-group">
-      <ul>
-        <% companies.forEach(company => { %>
-        <li>
-          <a class="col" href="/companies/<%= company._id %>">
-            <%= company.name %>
-          </a>
-        </li>
-        <% }) %>
-      </ul>
+      <% companies.forEach(company => { %>
 
-      <% if(companies.length === 0) { %>
+      <a
+        class="list-group-item list-group-item-action"
+        href="/companies/<%= company._id %>"
+      >
+        <%= company.name %>
+      </a>
+
+      <% }) %> <% if(companies.length === 0) { %>
       <p>There are no Companies available yet.</p>
       <% } %>
     </div>
