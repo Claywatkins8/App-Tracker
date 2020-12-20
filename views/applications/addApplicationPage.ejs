@@ -61,7 +61,7 @@
   <body>
 
     <!-- Add Application Form -->
-    <form action="/applications" method="POST" class="addapp-form">
+    <form action="/applications" method="POST" class="app-form">
     <section>
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -133,14 +133,14 @@
       </div>
       <!-- Full Job Description -->
       <div class="form-row">
-      <div class="form-group col-md-10">
+      <div class="form-group col-md-10 ">
         <label for="jobposting">Full Job Description</label>
-        <input
+        <textarea 
           type="text"
-          class="form-control"
+          class="form-control addapp-textarea"
           name="fullJobDescription"
           placeholder="Software Engineer"
-        />
+        ></textarea>
       </div>
     </div>
       <!-- References section -->
@@ -180,22 +180,23 @@
       <!-- Notes -->
       <div class="form-row">
         
-        <div class="form-group col-md-10">
+        <div class="form-group col-md-10 ">
           <label for="jobposting">Notes:</label>
-          <input
+          <textarea
             type="text"
-            class="form-control"
+            class="form-control addapp-textarea"
             name="notes"
             placeholder=""
-          />
+          ></textarea>
         </div>
-
+         
 
       </div>
       <form action="/applications" method="POST">
       <div class="text-center">
         <input class="btn btn-primary" type="submit" value="Create">
       </div>
+
       </form>
     </section>
   </body>
