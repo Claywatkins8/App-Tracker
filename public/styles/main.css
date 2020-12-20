@@ -6,3 +6,20 @@ main {
   margin: 10px;
   padding: 12px;
 }
+ 
+/* allApplicationPage */
+.allApp-h1 {
+  text-align: center;
+  padding:150px 0 50px 0;
+ 
+}
+.allapp-company {
+  text-align: center;
+  font-size: 23px;
+}
+.allApp-list {
+  width: 600px;
+  margin:auto;
+}
+
+/* App Add/Creat/edit page*/
