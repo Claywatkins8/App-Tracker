@@ -113,24 +113,27 @@ router.get("/:id/edit", function (req, res) {
 });
 
 
-
 // UPDATE
 router.put("/:id", function (req, res) {
 	db.Application.findByIdAndUpdate(
+    
 		req.params.id,
 		{
 			$set: {
 				...req.body,
-			},
+			}
 		},
 		{ new: true },
 		function (err, updatedApplication) {
-			if (err) return res.send(err);
-
+      if (err) return res.send(err);
+      
 			return res.redirect(`/applications/${updatedApplication._id}`);
 		}
-	);
+  );
 });
+
+
+
 
 // DELETE
 router.delete("/:id", function(req,res){

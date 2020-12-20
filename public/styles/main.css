@@ -8,24 +8,28 @@ main {
 }
 h1 {
   text-align: center;
-  padding:100px 0 50px 0;
+  padding: 100px 0 50px 0;
 }
- 
+
 /* allApplicationPage */
 .allApp-h1 {
   text-align: center;
-  padding:100px 0 50px 0;
- 
+  padding: 100px 0 50px 0;
 }
 .allapp-company {
   text-align: center;
   font-size: 23px;
 }
 
-
+.allapp-company a:hover {
+  color: white;
+  text-align: center;
+  font-size: 23px;
+  background-color: #117bff;
+}
 .allApp-list {
   width: 600px;
-  margin:auto;
+  margin: auto;
 }
 
 /* App Add/Creat/edit page*/
@@ -36,12 +40,10 @@ h1 {
   margin: 40px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-} 
-
-
-label{
-  font-size:18px;
-  font-weight:bold;
-  color: rgba(19, 16, 16, 0.797);
 }
 
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(19, 16, 16, 0.797);
+}
