@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  margin: 10px;
+  padding: 12px;
+}
+h1 {
+  text-align: center;
+  padding:100px 0 50px 0;
+}
+ 
+/* allApplicationPage */
+.allApp-h1 {
+  text-align: center;
+  padding:100px 0 50px 0;
+ 
+}
+.allapp-company {
+  text-align: center;
+  font-size: 23px;
+}
+.allApp-list {
+  width: 600px;
+  margin:auto;
+}
+
+/* App Add/Creat/edit page*/
+
+.app-form {
+  padding: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+} 
+
+
+label{
+  font-size:18px;
+  font-weight:bold;
+  color: rgba(19, 16, 16, 0.797);
+}
+

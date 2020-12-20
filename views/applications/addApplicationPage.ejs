@@ -25,7 +25,6 @@
     <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <script defer src ="/scripts/fileUpload.js"></script>
 
-
     <title>Application Tracker</title>
   </head>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -62,9 +61,9 @@
   </nav>
 
   <body>
-      <main>
+
     <!-- Add Application Form -->
-    <form action="/applications" method="POST">
+    <form action="/applications" method="POST" class="app-form">
     <section>
       <!-- Title / Company -->
         <div class="form-row">
@@ -125,29 +124,30 @@
         </div>
         <!-- Upload Resume/Cover Letter -->
 
-        <div class="form-row">
+          <div class="form-row">
           <div class="form-group col-md-3">
             <label>Resume Used:</label>
             <input type="file" name="resume" class="form-control-file filepond" />
           </div>
-    
 
           <div class="form-group col-md-3">
-            <label for="exampleFormControlFile1">Cover Letter Used:</label>
+            <label>Cover Letter Used:</label>
             <input type="file" name="coverLetter" class="form-control-file filepond" />
           </div>
-        </div>
 
+      </div>
       <!-- Full Job Description -->
       <div class="form-row">
+
       <div class="form-group col-md-9">
+
         <label for="jobposting">Full Job Description</label>
-        <input
+        <textarea 
           type="text"
-          class="form-control"
+          class="form-control addapp-textarea"
           name="fullJobDescription"
           placeholder="Software Engineer"
-        />
+        ></textarea>
       </div>
     </div>
       <!-- References section -->
@@ -186,22 +186,26 @@
       </div>
       <!-- Notes -->
       <div class="form-row">
+
         <div class="form-group col-md-9">
+
           <label for="jobposting">Notes:</label>
-          <input
+          <textarea
             type="text"
-            class="form-control"
+            class="form-control addapp-textarea"
             name="notes"
             placeholder=""
-          />
+          ></textarea>
         </div>
+         
+
       </div>
       <form action="/applications" method="POST">
       <div class="text-center">
         <input class="btn btn-primary" type="submit" value="Create">
       </div>
+
       </form>
     </section>
-  </main>
   </body>
 </html>
