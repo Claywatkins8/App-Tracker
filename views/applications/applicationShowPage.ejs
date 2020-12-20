@@ -85,7 +85,19 @@
           Job Description: <%= application.fullJobDescription %>
         </div>
       </div>
+
+         <!-- note box -->
+         <div class="row align-items-center">
+          <div class="col">
+            Note: <%= application.notes %>
+          </div>
+        </div>
+      </div>
+      
     </div>
+
+     
+
     <!-- Delete button form -->
     <form
       action="/applications/<%= application._id %>?_method=DELETE"

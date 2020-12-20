@@ -132,6 +132,9 @@ router.put("/:id", function (req, res) {
 	);
 });
 
+
+
+
 // DELETE
 router.delete("/:id", function(req,res){
 
