@@ -59,7 +59,7 @@
         class="list-group-item list-group-item-action"
         href="/companies/<%= company._id %>"
       >
-        <%= company.name %>
+        <%= company.name.toUpperCase() %>
       </a>
 
       <% }) %> <% if(companies.length === 0) { %>
