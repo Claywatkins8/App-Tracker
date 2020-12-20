@@ -51,18 +51,14 @@
   </nav>
 
   <body>
-    <h1>Test Home Page</h1>
+    <h1>Welcome to the Application Tracker</h1>
 
+    
     <ul>
       <% if (user) { %>
-      <li><%= user.username %></li>
-      <li>
-        <a href="/authors">Authors</a>
-      </li>
-      <li>
-        <a href="/articles">Articles</a>
-      </li>
-
+      
+      <h3> User name: <%= user.username %></h3>
+      
       <form action="/logout?_method=DELETE" method="POST">
         <input type="submit" value="Logout" />
       </form>

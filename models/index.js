@@ -30,5 +30,6 @@ mongoose.connection.on("disconnected", function(){
 
 module.exports = {
   Company: require("./Company"),
-  Application: require("./Application")
+  Application: require("./Application"),
+  User: require("./User")
 };
