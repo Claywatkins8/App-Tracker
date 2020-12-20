@@ -20,6 +20,7 @@ app.set("view engine", "ejs"); // allows for leaving off the extension and makes
 // express.static(directory location absolute)
 app.use(express.static(__dirname + '/public'));
 
+
 // body data middleware
 app.use(express.urlencoded({ extended: true }));
 
@@ -44,6 +45,7 @@ app.use(
     }
   )
 );
+
 
 // logger 
 app.use(function(req,res,next){
@@ -80,3 +82,4 @@ app.use("/applications", authRequired, controllers.applications);
 app.listen(PORT, function(){
   console.log(`Application Tracker is live at http://localhost:${PORT}/`)
 });
+

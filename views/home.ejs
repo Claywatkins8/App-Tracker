@@ -56,9 +56,9 @@
     
     <ul>
       <% if (user) { %>
-      
-      <h3> User name: <%= user.username %></h3>
-      
+
+      <h3><%= user.username %></h3>
+
       <form action="/logout?_method=DELETE" method="POST">
         <input type="submit" value="Logout" />
       </form>

@@ -25,9 +25,14 @@ const applicationSchema = mongoose.Schema(
 			type: Buffer,
 			
         },
+        resumeType: {
+            type: String
+        },
         coverLetter: {
 			type: Buffer,
-			
+        },
+        coverLetterType: {
+            type: String
         },
     
         dateApplied: {
@@ -56,7 +61,11 @@ const applicationSchema = mongoose.Schema(
         fullJobDescription: {
         type: String,
         
-        },   
+        }, 
+        createdBy: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "User"
+		}  
         	
     },
 	{
