@@ -3,8 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- Link up upload file -filePond -->
+      <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+      <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+      <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+      <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
+      <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+      <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+      <script defer src = "../../public/javascripts/fileUpload.js"></script>
     <!-- Link up css -->
-    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- Link up scripts -->
+    <script src="/scripts/app.js" defer></script>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -12,19 +22,6 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <!-- Link filePond -->
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
-    <!--scripts -->
-    <script defer src="/scripts/app.js"></script>
-    
-    <!-- filepond scripts -->
-    <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-    <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
-    <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
-    <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
-    <script defer src ="/scripts/fileUpload.js"></script>
-
 
     <title>Application Tracker</title>
   </head>
@@ -62,9 +59,9 @@
   </nav>
 
   <body>
-      <main>
+
     <!-- Add Application Form -->
-    <form action="/applications" method="POST">
+    <form action="/applications" method="POST" class="app-form">
     <section>
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -122,29 +119,28 @@
         </div>
         <!-- Upload Resume/Cover Letter -->
 
-        <div class="form-row">
-          <div class="form-group col-md-3">
-            <label>Resume Used:</label>
+          <div class="form-row">
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Resume Used:</label>
             <input type="file" name="resume" class="form-control-file filepond" />
           </div>
-    
 
-          <div class="form-group col-md-3">
+          <div class="form-group">
             <label for="exampleFormControlFile1">Cover Letter Used:</label>
             <input type="file" name="coverLetter" class="form-control-file filepond" />
           </div>
-        </div>
 
+      </div>
       <!-- Full Job Description -->
       <div class="form-row">
-      <div class="form-group col-md-10">
+      <div class="form-group col-md-10 ">
         <label for="jobposting">Full Job Description</label>
-        <input
+        <textarea 
           type="text"
-          class="form-control"
+          class="form-control addapp-textarea"
           name="fullJobDescription"
           placeholder="Software Engineer"
-        />
+        ></textarea>
       </div>
     </div>
       <!-- References section -->
@@ -183,22 +179,25 @@
       </div>
       <!-- Notes -->
       <div class="form-row">
-        <div class="form-group col-md-10">
+        
+        <div class="form-group col-md-10 ">
           <label for="jobposting">Notes:</label>
-          <input
+          <textarea
             type="text"
-            class="form-control"
+            class="form-control addapp-textarea"
             name="notes"
             placeholder=""
-          />
+          ></textarea>
         </div>
+         
+
       </div>
       <form action="/applications" method="POST">
       <div class="text-center">
         <input class="btn btn-primary" type="submit" value="Create">
       </div>
+
       </form>
     </section>
-  </main>
   </body>
 </html>

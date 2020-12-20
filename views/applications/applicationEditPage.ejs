@@ -62,7 +62,7 @@
   <body>
 
     <!-- Edit Application Form -->
-    <form action="/applications/<%= application._id %>?_method=PUT" method="POST">
+    <form action="/applications/<%= application._id %>?_method=PUT" method="POST" class="app-form">
     <section>
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -140,13 +140,13 @@
       <div class="form-row">
       <div class="form-group col-md-10">
         <label for="jobposting">Full Job Description</label>
-        <input
+        <textarea 
           type="text"
-          class="form-control"
+          class="form-control addapp-textarea"
           name="fullJobDescription"
           placeholder="Software Engineer"
           value="<%= application.fullJobDescription %> "
-        />
+        ></textarea>
       </div>
     </div>
       <!-- References section -->
@@ -190,13 +190,13 @@
       <div class="form-row">
         <div class="form-group col-md-10">
           <label for="jobposting">Notes:</label>
-          <input
+          <textarea 
             type="text"
-            class="form-control"
+            class="form-control addapp-textarea"
             name="notes"
             placeholder=""
             value="<%= application.notes %> "
-          />
+          ></textarea>
         </div>
       </div>
       <!-- Edit PUT Form -->
