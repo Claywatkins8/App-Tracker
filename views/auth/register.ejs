@@ -1,77 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Link up upload file -filePond -->
-    <link
-      href="https://unpkg.com/filepond/dist/filepond.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-      rel="stylesheet"
-    />
-    <script
-      defer
-      src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"
-    ></script>
-    <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
-    <script
-      defer
-      src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"
-    ></script>
-    <script
-      defer
-      src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"
-    ></script>
-    <script defer src="../../public/javascripts/fileUpload.js"></script>
-    <!-- Link up css -->
-    <link rel="stylesheet" href="/styles/main.css" />
-    <!-- Link up scripts -->
-    <script src="/scripts/app.js" defer></script>
-    <!-- Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-
+    <!-- Partials/head.ejs -->
+    <%- include('../partials/head.ejs') %>
     <title>Application Tracker</title>
   </head>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Application Tracker</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/"
-            >Home <span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/companies/">Companies</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/applications/">All Applications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/applications/new">New Application</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <!-- NavBar -->
+  <%- include('../partials/navbar.ejs') %>
   <body>
     <h1>Register for an account</h1>
 
