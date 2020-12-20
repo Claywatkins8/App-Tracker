@@ -25,9 +25,14 @@ const applicationSchema = mongoose.Schema(
 			type: Buffer,
 			
         },
+        resumeType: {
+            type: String
+        },
         coverLetter: {
 			type: Buffer,
-			
+        },
+        coverLetterType: {
+            type: String
         },
     
         dateApplied: {
