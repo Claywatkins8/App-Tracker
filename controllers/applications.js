@@ -7,7 +7,7 @@ const router = express.Router();
 const db = require("../models");
 
 
-// NOTE INDEX All Application Show Page
+//  INDEX All Application Show Page
 router.get("/", function (req, res) {
 	db.Company.find({createdBy: req.session.currentUser.id}).populate("applications").exec(function (error, foundCompany) {
 		if (error) return res.send(error);
@@ -20,7 +20,7 @@ router.get("/", function (req, res) {
 	});
 });
 
-  // NOTE NEW Add Application Page
+  //  NEW Add Application Page
 router.get("/new", function(req,res){
   // db.Company.find({createdBy: req.session.currentUser.id}, function (err, foundCompanies) {
   //   if (err) return res.send(err);
@@ -47,7 +47,7 @@ router.get("/:id", function(req,res){
   });
 });
  
-//NOTE CREATE
+// CREATE
 router.post("/", function (req, res) {
 
   db.Company.findOne({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, foundCompany){
@@ -70,7 +70,7 @@ router.post("/", function (req, res) {
     return res.redirect("/applications/");
 		});
     } else {
-      
+
       db.Company.create({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, createdCompany){
 
         if(err) return res.send(err);
@@ -145,11 +145,10 @@ router.delete("/:id", function(req,res){
 
       foundCompany.applications.remove(deletedApplication);
       foundCompany.save(function (err, updatedCompany){
-        
+  
         if(updatedCompany.applications.length === 0){
           db.Company.findByIdAndDelete(foundCompany._id, function (err, deletedCompany){
             if (err) return res.send(err);
-         
           });
          };
         console.log(foundCompany);

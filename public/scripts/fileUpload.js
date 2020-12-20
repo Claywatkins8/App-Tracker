@@ -1,4 +1,3 @@
-const { FilePond } = require("filepond");
 
 console.log("filepond link")
 
