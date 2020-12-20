@@ -3,6 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link up upload file -filePond -->
+    <link
+      href="https://unpkg.com/filepond/dist/filepond.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"
+    ></script>
+    <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"
+    ></script>
+    <script defer src="../../public/javascripts/fileUpload.js"></script>
     <!-- Link up css -->
     <link rel="stylesheet" href="/styles/main.css" />
     <!-- Link up scripts -->
@@ -38,10 +61,10 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/companies">Companies</a>
+          <a class="nav-link" href="/companies/">Companies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/applications">All Applications</a>
+          <a class="nav-link" href="/applications/">All Applications</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/applications/new">New Application</a>
@@ -49,32 +72,26 @@
       </ul>
     </div>
   </nav>
-
   <body>
-    <h1>Test Home Page</h1>
+    <h1>Welcome Back!</h1>
 
-    <ul>
-      <% if (user) { %>
-      <li><%= user.username %></li>
-      <li>
-        <a href="/authors">Authors</a>
-      </li>
-      <li>
-        <a href="/articles">Articles</a>
-      </li>
-
-      <form action="/logout?_method=DELETE" method="POST">
-        <input type="submit" value="Logout" />
-      </form>
-
-      <% } else { %>
-      <li>
-        <a href="/register">Register</a>
-      </li>
-      <li>
-        <a href="/login">Login</a>
-      </li>
+    <form action="/login" method="POST">
+      <% if (message) { %>
+      <p style="color: red"><%= message %></p>
       <% } %>
-    </ul>
+      <p>
+        <input type="email" name="email" placeholder="Email" required />
+      </p>
+      <p>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          minlength="8"
+        />
+      </p>
+      <input type="submit" value="login" />
+    </form>
   </body>
 </html>

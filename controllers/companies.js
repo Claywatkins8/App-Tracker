@@ -37,11 +37,11 @@ db.Company.find({}, function(err, allCompanies){
 router.get("/:id", function(req,res){
   db.Company
   .findById(req.params.id)
-  .populate("companies")
+  .populate("applications")
   .exec(function (err, foundCompany) {
     if (err) return res.send(err);
     
-    const context = { company: foundCompany };
+    const context = { companies: foundCompany };
     return res.render("companies/companyShowPage", context);
   })
 });
