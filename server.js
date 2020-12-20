@@ -19,10 +19,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
 // method override middleware
 app.use(methodOverride("_method"));
-//filePond
-FilePond.setOptions({
-  server:"//localhost:27017/application-tracker"
-});
 
 
 /* ==== Routes/Controllers  ==== */
