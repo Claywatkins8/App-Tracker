@@ -52,19 +52,10 @@ label {
 
 /* Register page*/
 
-.register-form{
-  padding: 40px;
-  max-width: 500px;
-  margin: 50px auto;
-  padding:auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-}
-
 .register-body{
-  padding:10px 120px;
+  padding:0 90px 0  90px;
 }
 
 .register-button{
-  margin: 10px 160px;
+  margin-top: 20px;
 }
