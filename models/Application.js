@@ -19,25 +19,15 @@ const applicationSchema = mongoose.Schema(
 
         postingUrl: {
 			type: String,
-			
         },
         resume: {
-			type: Buffer,
-			
-        },
-        resumeType: {
-            type: String
+			type: Object,
         },
         coverLetter: {
-			type: Buffer,
+			type: Object,
         },
-        coverLetterType: {
-            type: String
-        },
-    
         dateApplied: {
 			type: Date,
-			
         },
         notes: String,
         
@@ -66,7 +56,6 @@ const applicationSchema = mongoose.Schema(
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "User"
 		}  
-        	
     },
 	{
 		timestamps: true,
