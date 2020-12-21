@@ -10,25 +10,29 @@
   <body>
     <h1>Welcome to the Application Tracker</h1>
 
-    <ul>
-      <% if (user) { %>
+    <div class="list-group allApp-list app-form">
+      <ul>
+        <% if (user) { %>
 
-      <h3 class="text-center">Welcome back <%= user.username %></h3>
+        <h3 class="text-center">Welcome back <%= user.username %></h3>
 
-      <form action="/logout?_method=DELETE" method="POST">
-        <div class="text-center">
-          <input type="submit" value="Logout" />
+        <form action="/logout?_method=DELETE" method="POST">
+          <div class="text-center">
+            <input class="btn btn-primary" type="submit" value="Logout" />
+          </div>
+        </form>
+
+        <% } else { %>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <a class="btn btn-primary btn-block" href="/register">Register</a>
+          </div>
+          <div class="col-4">
+            <a class="btn btn-primary btn-block" href="/login">Login</a>
+          </div>
         </div>
-      </form>
-
-      <% } else { %>
-      <li>
-        <a href="/register">Register</a>
-      </li>
-      <li>
-        <a href="/login">Login</a>
-      </li>
-      <% } %>
-    </ul>
+        <% } %>
+      </ul>
+    </div>
   </body>
 </html>

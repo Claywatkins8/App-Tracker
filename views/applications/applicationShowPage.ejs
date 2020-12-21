@@ -9,71 +9,98 @@
   <!-- NavBar -->
   <%- include('../partials/navbar.ejs') %>
 
-  <body>
+  <body >
     <div class="text-center">
       <h1>Application Show Page</h1>
     </div>
     <!-- Show App Info by ID -->
-    <div class="container">
+    <div class="container app-form">
       <!-- First row -->
       <div class="form-row">
         <div class="form-group col-md-6">
           <label>Job Posting Title: </label>
-          <%= application.jobTitle %></div>
+          <%= application.jobTitle %>
+        </div>
         <div class="form-group col-md-3">
           <label>Company: </label>
-          <%= application.company.name.toUpperCase() %></div>
-      </div>
-
-        <div class="col">Location: <%= application.location %></div>
-        <div class="col">Remote: <%= application.remote %></div>
-      <!-- Second Row -->
-      <div class="row align-items-center">
-        <div class="col">Date Applied: <%= application.dateApplied %></div>
-        <div class="col">Posting URL: <%= application.postingUrl %></div>
-        <div class="col">Resume: <%= application.resume %></div>
-        <div class="col">Cover Letter: <%= application.coverLetter %></div>
-      </div>
-      <!-- Third Row -->
-      <div class="row align-items-center">
-        <div class="col">
-          Reference Name: <%= application.referenceName %>
-        </div>
-        <div class="col">Phone: <%= application.referencePhone %></div>
-        <div class="col">Email: <%= application.referenceEmail %></div>
-        <div class="col">LinkedIn: <%= application.referenceLinkedIn %></div>
-      </div>
-      <!-- full Job Description box -->
-      <div class="row align-items-center">
-        <div class="col">
-          Job Description: <%= application.fullJobDescription %>
+          <%= application.company.name.toUpperCase() %>
         </div>
       </div>
-
-      <!-- Notes -->
-      <div class="row align-items-center">
-        <div class="col">
-          Notes: <%= application.notes %>
-        </div>
+    <!-- Location/Remote -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Location: </label>
+        <%= application.location %>
+      </div>
+      <div class="form-group col-md-3">
+        <label>Remote: </label>
+        <%= application.remote %>
       </div>
     </div>
+    <!-- Date/URL -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Date Applied: </label>
+          <%= application.dateApplied %></div>
+        <div class="form-group col-md-3">
+          <label>Posting: </label>
+          <%= application.postingUrl %></div>
+      </div>
+    <!-- Resume/Cover Letter -->
+    <div class="form-row">
+    <div class="form-group col-md-6">
+    <label>Resume: </label>
+    <%= application.resume %></div>
+    <div class="form-group col-md-3">
+    <label>Cover Letter: </label>
+    <%= application.coverLetter %></div>
+    </div>
+      <!-- Referance -->
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label>Reference Name: </label>
+          <%= application.referenceName %></div>
+        <div class="form-group col-md-3">
+          <label>Phone: </label>
+          <%= application.referencePhone %></div>
+          <div class="form-group col-md-3">
+            <label>Email: </label>
+            <%= application.referenceEmail %></div>
+            <div class="form-group col-md-3">
+              <label>LinkedIn: </label>
+              <%= application.referenceLinkedIn %></div>
+      </div>
+      <!-- full Job Description box -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Job Description: </label>
+          <%= application.fullJobDescription %></div>
+        </div>
+
+      <!-- Notes -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Notes: </label>
+          <%= application.notes %></div>
+        </div>
 
     <!-- Delete button form -->
     <form
       action="/applications/<%= application._id %>?_method=DELETE"
-      method="POST"
-    >
-      <div class="text-center">
-        <input type="submit" class="btn btn-primary" value="Delete" />
-      </div>
-    </form>
+      method="POST">
 
-    <!-- Edit button form -->
-    
-      <div class="text-center">
-        <a
-          class="btn btn-primary"
-          href="/applications/<%= application._id %>/edit"
-          >Edit</a>
+    <div class="row justify-content-center">
+      <div class="col-4">
+          <input type="submit" class="btn btn-primary btn-block" value="Delete" />
+        </form>
+      </div>
+     <!-- Edit button form -->
+     <div class="col-4">
+       <a
+       class="btn btn-primary btn-block"
+       href="/applications/<%= application._id %>/edit"
+       >Edit</a>
+      </div>
+     </div>
   </body>
 </html>

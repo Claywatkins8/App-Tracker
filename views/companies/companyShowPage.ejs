@@ -10,10 +10,9 @@
 
   <body>
     <h1>Company Show Page</h1>
-
-    <h3 class="text-center"><%= companies.name.toUpperCase() %></h3>
     <main>
-      <div class="list-group allApp-list allapp-company">
+      <h3 class="text-center"><%= companies.name.toUpperCase() %></h3>
+      <div class="list-group allApp-list allapp-company app-form">
         <% companies.applications.forEach(application => { %>
 
         <a
