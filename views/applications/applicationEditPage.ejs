@@ -27,16 +27,6 @@
             value="<%= application.jobTitle %> "
           />
         </div>
-        <div class="form-group col-md-3">
-          <label for="inputPassword4">Company</label>
-          <input
-            type="text"
-            class="form-control"
-            name="company"
-            placeholder="Google"
-            value="<%= application.company.name %> "
-          />
-        </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-3">
@@ -103,19 +93,7 @@
           />
         </div>
       </div>
-      <!-- Full Job Description -->
-      <div class="form-row">
-        <div class="form-group col-md-10">
-          <label for="jobposting">Full Job Description</label>
-          <textarea
-            type="text"
-            class="form-control addapp-textarea"
-            name="fullJobDescription"
-            placeholder="Software Engineer"
-            value="<%= application.fullJobDescription %> "
-          ></textarea>
-        </div>
-      </div>
+
       <!-- References section -->
       <div class="form-row">
         <div class="form-group col-md-3">
@@ -159,17 +137,30 @@
           />
         </div>
       </div>
+      <!-- Full Job Description -->
+      <div class="form-row">
+        <div class="form-group col-md-10">
+          <label for="jobposting">Full Job Description</label>
+          <input
+            type="text"
+            class="form-control addapp-textarea"
+            name="fullJobDescription"
+            placeholder="Software Engineer"
+            value="<%= application.fullJobDescription %> "
+          ></input>
+        </div>
+      </div>
       <!-- Notes -->
       <div class="form-row">
         <div class="form-group col-md-10">
           <label for="jobposting">Notes:</label>
-          <textarea
+          <input
             type="text"
             class="form-control addapp-textarea"
             name="notes"
             placeholder=""
             value="<%= application.notes %> "
-          ></textarea>
+          ></input>
         </div>
       </div>
       <!-- Edit PUT Form -->
