@@ -61,23 +61,30 @@
             <label>Cover Letter: </label>
             <%= application.coverLetter %></div>
             </div> -->
-        <!-- Referance -->
-        <div class="form-row">
-          <div class="form-group col-md-3">
-            <label>Reference Name: </label>
-            <%= application.referenceName %>
+        <!-- Reference Container -->
+        <div id="refbox">
+          <label>References:</label>
+          <!-- Reference Name/Phone -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Name: </label>
+              <%= application.referenceName %>
+            </div>
+            <div class="form-group col-md-3">
+              <label>Phone: </label>
+              <%= application.referencePhone %>
+            </div>
           </div>
-          <div class="form-group col-md-3">
-            <label>Phone: </label>
-            <%= application.referencePhone %>
-          </div>
-          <div class="form-group col-md-3">
-            <label>Email: </label>
-            <%= application.referenceEmail %>
-          </div>
-          <div class="form-group col-md-3">
-            <label>LinkedIn: </label>
-            <%= application.referenceLinkedIn %>
+          <!-- Reference Email/LinkedIn -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Email: </label>
+              <%= application.referenceEmail %>
+            </div>
+            <div class="form-group col-md-3">
+              <label>LinkedIn: </label>
+              <%= application.referenceLinkedIn %>
+            </div>
           </div>
         </div>
         <!-- full Job Description box -->
