@@ -9,29 +9,33 @@
   <!-- NavBar -->
   <%- include('../partials/navbar.ejs') %>
 
-  <body>
+  <body >
     <div class="text-center">
       <h1>Application Show Page</h1>
     </div>
     <!-- Show App Info by ID -->
-    <div class="container">
+    <div class="container app-form">
       <!-- First row -->
       <div class="form-row">
         <div class="form-group col-md-6">
           <label>Job Posting Title: </label>
-          <%= application.jobTitle %></div>
+          <%= application.jobTitle %>
+        </div>
         <div class="form-group col-md-3">
           <label>Company: </label>
-          <%= application.company.name.toUpperCase() %></div>
+          <%= application.company.name.toUpperCase() %>
+        </div>
       </div>
     <!-- Location/Remote -->
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Location: </label>
-        <%= application.location %></div>
+        <%= application.location %>
+      </div>
       <div class="form-group col-md-3">
         <label>Remote: </label>
-        <%= application.remote %></div>
+        <%= application.remote %>
+      </div>
     </div>
     <!-- Date/URL -->
       <div class="form-row">
@@ -98,8 +102,5 @@
        >Edit</a>
       </div>
      </div>
-
-    
-
   </body>
 </html>
