@@ -1,12 +1,28 @@
 * {
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(249, 140, 85, 1) 100%
+  );
+}
 
 main {
   margin: 10px;
   padding: 12px;
 }
 h1 {
+  color: #1b67a8;
   text-align: center;
   padding: 100px 0 50px 0;
 }
@@ -35,6 +51,7 @@ h1 {
 /* App Add/Creat/edit page*/
 
 .app-form {
+  background-color: whitesmoke;
   padding: 40px;
   max-width: 1000px;
   margin: 40px auto;
@@ -46,4 +63,13 @@ label {
   font-size: 18px;
   font-weight: bold;
   color: rgba(19, 16, 16, 0.797);
+}
+
+.navbar-custom {
+  color: #117bff;
+}
+
+img {
+  height: 100px;
+  width: 50px;
 }

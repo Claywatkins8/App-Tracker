@@ -41,7 +41,7 @@ router.get("/:id", function(req,res){
   .populate("company")
   .exec(function (err, foundApplication) {
     if (err) return res.send(err);
-    
+    console.log(foundApplication.resume);
     const context = { application: foundApplication };
     return res.render("applications/applicationShowPage", context);
   });
@@ -49,11 +49,13 @@ router.get("/:id", function(req,res){
  
 // CREATE
 router.post("/", function (req, res) {
-
   db.Company.findOne({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, foundCompany){
-
+    
     if(err) return res.send(err);
-   
+
+    if (req.body.resume) req.body.resume = JSON.parse(req.body.resume);
+    if (req.body.coverLetter) req.body.coverLetter = JSON.parse(req.body.coverLetter);
+    console.log(req.body);
     if (foundCompany) {
       req.body.company = foundCompany._id;
       req.body.createdBy = req.session.currentUser.id
@@ -115,6 +117,7 @@ router.get("/:id/edit", function (req, res) {
 
 // UPDATE
 router.put("/:id", function (req, res) {
+
 	db.Application.findByIdAndUpdate(
     
 		req.params.id,
@@ -125,6 +128,7 @@ router.put("/:id", function (req, res) {
 		},
 		{ new: true },
 		function (err, updatedApplication) {
+      console.log(err);
       if (err) return res.send(err);
       
 			return res.redirect(`/applications/${updatedApplication._id}`);
