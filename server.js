@@ -14,7 +14,7 @@ const MongoStore = require("connect-mongo")(session);
 //    },
 //    filename: function (req, file, cb) {
     
-//      cd(null, file.originalname);
+//      cb(null, file.originalname);
 //    }
 // })
 
@@ -85,9 +85,9 @@ app.use(function(req,res,next){
 const authRequired = require("./middleware/authRequired");
 
 
-//multer
+// //multer
 // app.post("/applications", upload.single("resume"), (req,res) => {
-//   res.send(req.file.filename);
+//   res.redirect("/applications/");
 // });
 
 /* ==== Routes/Controllers  ==== */
