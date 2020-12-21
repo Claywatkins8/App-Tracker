@@ -10,7 +10,8 @@
   <body>
     <h1>Register for an account</h1>
 
-    <form action="/register" method="POST">
+    <form action="/register" method="POST" class="register-form">
+      <div class="register-body">
       <p>
         <input
           type="text"
@@ -23,6 +24,7 @@
       <p>
         <input type="email" name="email" placeholder="Email" required />
       </p>
+     
       <p>
         <input
           type="password"
@@ -32,7 +34,9 @@
           minlength="8"
         />
       </p>
-      <input type="submit" value="Register" />
+    </div>
+   
+      <input type="submit" value="Register" class="register-button"/>
     </form>
   </body>
 </html>
