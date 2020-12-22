@@ -15,8 +15,9 @@ body {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 1) 0%,
-    rgba(249, 140, 85, 1) 100%
-  );
+    rgb(45, 47, 82) 100%
+    /* rgb(153, 85, 249) 100% */
+  ); 
 }
 
 main {
@@ -72,19 +73,17 @@ label {
 
 .register-form {
   padding: 40px;
-  max-width: 500px;
+  width: 400px;
   margin: 50px auto;
   padding: auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 
-.register-body {
-  padding: 10px 120px;
-}
-
 .register-button {
-  margin: 10px 160px;
+  padding-left: 230px;
+  padding-right: 230px;
+  margin-top: 15px;
 }
 
 #homebtn {
