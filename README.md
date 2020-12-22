@@ -74,3 +74,7 @@ This page will show the user every application they have submitted to the select
 Users will be able to access this page at any time from the header. This will display a list of all companies that the user has applied to with a sub-list showing all jobs applied to at that company.
 
 <img src="WireFrames/Application Tracker - All Applications Show Page.png">
+
+## Database ERD
+
+<img src="WireFrames/Application Tracker (2).png">
