@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
 }
+
 html {
-  height: 100%;
+  min-height: 100%;
 }
+
 body {
-  height: 100%;
+  background-position: absolute;
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -55,7 +57,7 @@ h1 {
   padding: 40px;
   max-width: 1000px;
   margin: 50px auto;
-  padding:auto;
+  padding: auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -66,15 +68,38 @@ label {
   color: rgba(19, 16, 16, 0.797);
 }
 
-
-
 /* Register page*/
 
-.register-body{
-  padding:0 90px 0  90px;
+.register-form {
+  padding: 40px;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 
-.register-button{
+.register-body {
+  padding: 10px 120px;
+}
 
-  margin-top: 20px;
+.register-button {
+  margin: 10px 160px;
+}
+
+#homebtn {
+  padding: 10px;
+}
+#companybtn {
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+#descriptionbox {
+  overflow: scroll;
+  max-height: 300px;
+}
+
+#refbox {
+  border: 1px solid grey;
 }
