@@ -26,14 +26,11 @@ main {
 h1 {
   color: #1b67a8;
   text-align: center;
-  padding: 100px 0 50px 0;
+  padding: 50px 0 50px 0;
 }
 
 /* allApplicationPage */
-.allApp-h1 {
-  text-align: center;
-  padding: 100px 0 50px 0;
-}
+
 .allapp-company {
   text-align: center;
   font-size: 23px;
@@ -101,5 +98,10 @@ label {
 }
 
 #refbox {
-  border: 1px solid grey;
+  padding: 20px;
+}
+#newbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
