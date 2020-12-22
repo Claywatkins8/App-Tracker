@@ -15,7 +15,7 @@ const applicationSchema = mongoose.Schema(
         location: {
 			type: String,
         },	
-        remote: Boolean,
+        remote: String,
 
         postingUrl: {
 			type: String,
