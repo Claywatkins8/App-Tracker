@@ -54,7 +54,8 @@ h1 {
   background-color: whitesmoke;
   padding: 40px;
   max-width: 1000px;
-  margin: 40px auto;
+  margin: 50px auto;
+  padding: auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -65,13 +66,23 @@ label {
   color: rgba(19, 16, 16, 0.797);
 }
 
-.navbar-custom {
-  color: #117bff;
+/* Register page*/
+
+.register-form {
+  padding: 40px;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 
-img {
-  height: 100px;
-  width: 50px;
+.register-body {
+  padding: 10px 120px;
+}
+
+.register-button {
+  margin: 10px 160px;
 }
 
 #homebtn {
