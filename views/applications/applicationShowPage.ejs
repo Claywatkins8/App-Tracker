@@ -17,7 +17,7 @@
     <div class="container app-form">
       <!-- First row -->
       <div class="form-row">
-        <div class="form-group col-md-6">
+       <div class="form-group col-md-6">
           <label>Job Posting Title: </label>
           <%= application.jobTitle %>
         </div>
@@ -38,23 +38,19 @@
       </div>
     </div>
     <!-- Date/URL -->
-      <div class="form-row">
+    <div class="form-row">
         <div class="form-group col-md-6">
           <label>Date Applied: </label>
+          <br>
           <%= application.dateApplied %></div>
         <div class="form-group col-md-3">
           <label>Posting: </label>
-          <%= application.postingUrl %></div>
+          <a href=" <%= application.postingUrl %>">
+           URL
+          </a>
+        
+        </div>
       </div>
-    <!-- Resume/Cover Letter -->
-    <!-- <div class="form-row">
-    <div class="form-group col-md-6">
-    <label>Resume: </label>
-    <img src="data:<%= application.resume.type %>;base64,<%= application.resume.data %>" alt=""></div>
-    <div class="form-group col-md-3">
-    <label>Cover Letter: </label>
-    <img src="data:<%= application.coverLetter.type %>;base64,<%= application.coverLetter.data %>" alt=""></div>
-    </div> -->
       <!-- Referance -->
       <div class="form-row">
         <div class="form-group col-md-4">
