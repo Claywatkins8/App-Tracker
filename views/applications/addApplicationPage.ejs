@@ -9,11 +9,10 @@
   <%- include('../partials/navbar.ejs') %>
 
   <body>
-
     <!-- Add Application Form -->
-    <form action="/applications" method="POST" class="app-form" >
-    <section>
-      <!-- Title / Company -->
+    <form action="/applications" method="POST" class="app-form">
+      <section>
+        <!-- Title / Company -->
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="jobposting">Job Posting Title</label>
@@ -43,7 +42,7 @@
             <input
               type="text"
               class="form-control"
-              name = "location"
+              name="location"
               placeholder="Seattle, WA"
             />
           </div>
@@ -60,7 +59,13 @@
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="jobposting">Date Applied</label>
-            <input required type="date" name="dateApplied" class="form-control" placeholder="01/01/2020" />
+            <input
+              required
+              type="date"
+              name="dateApplied"
+              class="form-control"
+              placeholder="01/01/2020"
+            />
           </div>
           <div class="form-group col-md-3">
             <label for="inputPassword4">Posting URL</label>
@@ -72,89 +77,75 @@
             />
           </div>
         </div>
-        <!-- Upload Resume/Cover Letter -->
-<!-- 
-          <div class="form-row">
-          <div class="form-group col-md-3">
-            <label>Resume Used:</label>
-            <input type="file" name="resume" class="form-control-file filepond" />
+        <!-- Full Job Description -->
+        <div class="form-row">
+          <div class="form-group col-md-9">
+            <label for="jobposting">Full Job Description</label>
+            <textarea
+              type="text"
+              class="form-control addapp-textarea"
+              name="fullJobDescription"
+              placeholder="Software Engineer"
+            ></textarea>
+          </div>
+        </div>
+        <!-- References section -->
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <label for="jobposting">Reference Name</label>
+            <input
+              type="text"
+              name="referenceName"
+              class="form-control"
+              placeholder="John Smith"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputPassword4">Phone:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="referencePhone"
+              placeholder="(123) 456-7890"
+            />
           </div>
           <div class="form-group col-md-3">
-            <label>Cover Letter Used:</label>
-            <input type="file" name="coverLetter" class="form-control-file filepond" />
-          </div> -->
-
-      </div>
-      <!-- Full Job Description -->
-      <div class="form-row">
-
-      <div class="form-group col-md-9">
-
-        <label for="jobposting">Full Job Description</label>
-        <textarea 
-          type="text"
-          class="form-control addapp-textarea"
-          name="fullJobDescription"
-          placeholder="Software Engineer"
-        ></textarea>
-      </div>
-    </div>
-      <!-- References section -->
-      <div class="form-row">
-        <div class="form-group col-md-2">
-          <label for="jobposting">Reference Name</label>
-          <input type="text" name="referenceName" class="form-control" placeholder="John Smith" />
+            <label for="inputPassword4">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              name="referenceEmail"
+              placeholder="Smith.John@DreamCompany.com"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputPassword4">LinkedIn URL</label>
+            <input
+              type="text"
+              class="form-control"
+              name="referenceLinkedIn"
+              placeholder="LinkedIn.com/JohnSmith"
+            />
+          </div>
         </div>
-        <div class="form-group col-md-2">
-          <label for="inputPassword4">Phone:</label>
-          <input
-            type="text"
-            class="form-control"
-            name="referencePhone"
-            placeholder="(123) 456-7890"
-          />
+        <!-- Notes -->
+        <div class="form-row">
+          <div class="form-group col-md-9">
+            <label for="jobposting">Notes:</label>
+            <textarea
+              type="text"
+              class="form-control addapp-textarea"
+              name="notes"
+              placeholder=""
+            ></textarea>
+          </div>
         </div>
-        <div class="form-group col-md-3">
-          <label for="inputPassword4">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            name="referenceEmail"
-            placeholder="Smith.John@DreamCompany.com"
-          />
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputPassword4">LinkedIn URL</label>
-          <input
-            type="text"
-            class="form-control"
-            name="referenceLinkedIn"
-            placeholder="LinkedIn.com/JohnSmith"
-          />
-        </div>
-      </div>
-      <!-- Notes -->
-      <div class="form-row">
-
-        <div class="form-group col-md-9">
-
-          <label for="jobposting">Notes:</label>
-          <textarea
-            type="text"
-            class="form-control addapp-textarea"
-            name="notes"
-            placeholder=""
-          ></textarea>
-        </div>
-         
-
-      </div>
-      <form action="/applications" method="POST" >
-      <div class="text-center">
-        <input class="btn btn-primary" type="submit" value="Create">
-      </div>
-
-      </form>
-    </section>
+        <form action="/applications" method="POST">
+          <div class="text-center">
+            <input class="btn btn-primary" type="submit" value="Create" />
+          </div>
+        </form>
+      </section>
+    </form>
   </body>
 </html>
