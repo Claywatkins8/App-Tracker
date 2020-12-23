@@ -5,25 +5,6 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
 
-// const multer = require("multer");
-
-
-// const _storage = multer.diskStorage({
-//    destination: function(req,file,cd){
-//      cd(null, "/public/uploads/");
-//    },
-//    filename: function (req, file, cb) {
-    
-//      cb(null, file.originalname);
-//    }
-// })
-
-// const upload = multer({storage:'_storage'});
-// const fs = require("fs");
-
-
-
-
 /* ==== Internal Modules  ==== */
 const controllers = require("./controllers");
 
@@ -105,6 +86,6 @@ app.use("/applications", authRequired, controllers.applications);
 
 /* ==== Server Listener  ==== */
 app.listen(PORT, function(){
-  console.log(`Application Tracker is live at http://localhost:${PORT}/`)
+  console.log(`AppTracker is live at http://localhost:${PORT}/`)
 });
 
