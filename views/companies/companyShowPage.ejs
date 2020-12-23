@@ -3,15 +3,13 @@
   <head>
     <!-- Partials/head.ejs -->
     <%- include('../partials/head.ejs') %>
-    <title>All Current Applications</title>
   </head>
   <!-- NavBar -->
   <%- include('../partials/navbar.ejs') %>
 
   <body>
-    <h1>Company Show Page</h1>
+    <h1 class="text-center"><%= companies.name.toUpperCase() %></h1>
     <main>
-      <h3 class="text-center"><%= companies.name.toUpperCase() %></h3>
       <div class="list-group allApp-list allapp-company app-form">
         <% companies.applications.forEach(application => { %>
 
@@ -24,8 +22,6 @@
 
         <% }); %>
       </div>
-
-      
     </main>
   </body>
 </html>
