@@ -55,7 +55,12 @@ router.post("/", function (req, res) {
 
     if (req.body.resume) req.body.resume = JSON.parse(req.body.resume);
     if (req.body.coverLetter) req.body.coverLetter = JSON.parse(req.body.coverLetter);
-    console.log(req.body);
+ 
+    // Checking that Url Is complete
+    req.body.postingUrl.includes('https://') ? '' : req.body.postingUrl = `https://${req.body.postingUrl}`;
+    req.body.referenceLinkedIn.includes('https://') ? '' : req.body.referenceLinkedIn = `https://${req.body.referenceLinkedIn}`;
+
+
     if (foundCompany) {
       req.body.company = foundCompany._id;
       req.body.createdBy = req.session.currentUser.id
@@ -130,8 +135,13 @@ router.put("/:id", function (req, res) {
 		function (err, updatedApplication) {
       console.log(err);
       if (err) return res.send(err);
+     
+      // Checking that Url Is complete - HTTPS//
+    updatedApplication.postingUrl.includes('https://') ? '' : updatedApplication.postingUrl = `https://${updatedApplication.postingUrl}`;
+    updatedApplication.referenceLinkedIn.includes('https://') ? '' : updatedApplication.referenceLinkedIn = `https://${updatedApplication.referenceLinkedIn}`;
+    updatedApplication.save();
       
-			return res.redirect(`/applications/${updatedApplication._id}`);
+    return res.redirect(`/applications/${updatedApplication._id}`);
 		}
   );
 });

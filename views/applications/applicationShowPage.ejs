@@ -47,11 +47,15 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label>Date Applied: </label>
-          <%= application.dateApplied.toLocaleDateString() %></div>
+          <%= application.dateApplied.toDateString() %>
+        </div>
         <div class="form-group col-md-3">
           <label>Posting: </label>
-          <a target=”_blank” href="<%= application.postingUrl %>">Link</a></div>
+          <% if (application.postingUrl.includes(".com")) {%> 
+          <a target=”_blank” class="btn btn-primary btn-sm" href="<%= application.postingUrl %>">Link</a>
+          <% } %> 
       </div>
+    </div>
 
         <!-- Reference Container -->
         <label>References:</label>
@@ -70,12 +74,16 @@
           <!-- Reference Email/LinkedIn -->
           <div class="form-row">
             <div class="form-group col-md-6">
+              <address>
               <label>Email: </label>
-              <%= application.referenceEmail %>
+                <a href="mailto:<%= application.referenceEmail %>"><%= application.referenceEmail %></a>
+              </address>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
               <label>LinkedIn: </label>
-              <a target=”_blank” href="<%= application.referenceLinkedIn %>">Link</a>
+              <% if (application.referenceLinkedIn.includes(".com")) {%> 
+              <a target=”_blank” class="btn btn-primary btn-sm" href="<%= application.referenceLinkedIn %>">Link</a>
+              <% } %> 
             </div>
           </div>
       </div>
