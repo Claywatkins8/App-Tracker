@@ -1,10 +1,8 @@
 // require mongoose 
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 // connection string
-const dbUrl = "mongodb://localhost:27017/application-tracker"
-
-
+const dbUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/application-tracker"
 
 // connnect
 mongoose.connect(dbUrl, {

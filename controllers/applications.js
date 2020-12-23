@@ -52,7 +52,7 @@ router.post("/", function (req, res) {
   db.Company.findOne({name: req.body.company, createdBy: req.session.currentUser.id}, function (err, foundCompany){
     
     if(err) return res.send(err);
-
+    // FilePond
     if (req.body.resume) req.body.resume = JSON.parse(req.body.resume);
     if (req.body.coverLetter) req.body.coverLetter = JSON.parse(req.body.coverLetter);
  

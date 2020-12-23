@@ -10,9 +10,11 @@ const controllers = require("./controllers");
 
 /* ==== Instanced Modules  ==== */
 const app = express();
+// access to the dotenv file
+require("dotenv").config();
 
 /* ==== Configuration  ==== */
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 app.set("view engine", "ejs"); // allows for leaving off the extension and makes the server more effecient
 
@@ -34,10 +36,10 @@ app.use(
     {
       // set the store to the MongoStore we required
       store: new MongoStore({
-        url: "mongodb://localhost:27017/application-tracker"
+        url: process.env.MONGODB_URI || "mongodb://localhost:27017/application-tracker"
       }),
       // our secret is a signature in our sessions to verify that it is valid
-      secret: "Super Secret Waffles",
+      secret: process.env.SECRET,
       resave: false,
       saveUninitialized: false,
       cookie: {
