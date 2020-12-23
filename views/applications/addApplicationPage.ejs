@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Partials/head.ejs -->
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <!-- NavBar -->
+  <%- include('../partials/navbar.ejs') %>
+
+  <body>
+    <h1 class="allApp-h1">Create A New Application</h1>
+    <!-- Add Application Form -->
+    <form action="/applications" method="POST" class="app-form">
+      <section>
+        <!-- Title / Company -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="jobposting">Job Posting Title</label>
+            <input
+              type="text"
+              class="form-control"
+              name="jobTitle"
+              placeholder="Software Engineer"
+              required
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputPassword4">Company</label>
+            <input
+              type="text"
+              class="form-control"
+              name="company"
+              placeholder="Google"
+              required
+            />
+          </div>
+        </div>
+        <!-- Location/ Remote -->
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="jobposting">Location</label>
+            <input
+              type="text"
+              class="form-control"
+              name="location"
+              placeholder="Seattle, WA"
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label>Remote</label>
+            <select name="remote" class="form-control" required>
+              <option selected>Not Specified</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+        <!-- Date / URL -->
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="jobposting">Date Applied</label>
+            <input
+              required
+              type="date"
+              name="dateApplied"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputPassword4">Posting URL</label>
+            <input
+              type="text"
+              class="form-control"
+              name="postingUrl"
+              placeholder="Google.com/jobs"
+            />
+          </div>
+        </div>
+        <!-- Full Job Description -->
+        <div class="form-row">
+          <div class="form-group col-md-9">
+            <label for="jobposting">Full Job Description</label>
+            <textarea
+              type="text"
+              class="form-control addapp-textarea"
+              name="fullJobDescription"
+              placeholder="Software Engineer"
+            ></textarea>
+          </div>
+        </div>
+        <!-- References section -->
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <label for="jobposting">Reference Name</label>
+            <input
+              type="text"
+              name="referenceName"
+              class="form-control"
+              placeholder="John Smith"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputPassword4">Phone:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="referencePhone"
+              placeholder="(123) 456-7890"
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputPassword4">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              name="referenceEmail"
+              placeholder="Smith.John@DreamCompany.com"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputPassword4">LinkedIn URL</label>
+            <input
+              type="text"
+              class="form-control"
+              name="referenceLinkedIn"
+              placeholder="LinkedIn.com/JohnSmith"
+            />
+          </div>
+        </div>
+        <!-- Notes -->
+        <div class="form-row">
+          <div class="form-group col-md-9">
+            <label for="jobposting">Notes:</label>
+            <textarea
+              type="text"
+              class="form-control addapp-textarea"
+              name="notes"
+              placeholder=""
+            ></textarea>
+          </div>
+        </div>
+        <form action="/applications" method="POST">
+          <div class="text-center">
+            <input class="btn btn-primary" type="submit" value="Create" />
+          </div>
+        </form>
+      </section>
+    </form>
+  </body>
+</html>

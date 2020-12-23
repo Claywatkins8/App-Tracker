@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Partials/head.ejs -->
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <!-- NavBar -->
+  <%- include('../partials/navbar.ejs') %>
+
+  <body>
+    <h1 class="text-center"><%= companies.name.toUpperCase() %></h1>
+    <main>
+      <div class="list-group allApp-list allapp-company app-form">
+        <% companies.applications.forEach(application => { %>
+
+        <a
+          href="/applications/<%= application._id %>"
+          class="list-group-item list-group-item-action"
+        >
+          <%= application.jobTitle %>
+        </a>
+
+        <% }); %>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Link up css -->
-    <link rel="stylesheet" href="/styles/main.css" />
-    <!-- Link up scripts -->
-    <script src="/scripts/app.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <%- include('partials/head.ejs') %>
   </head>
-  <body></body>
+  <!-- NavBar -->
+  <%- include('partials/navbar.ejs') %>
+
+  <body>
+    <h1>Welcome to AppTracker</h1>
+
+    <div class="list-group allApp-list app-form">
+      <% if (user) { %>
+
+      <h3 class="text-center">Welcome back <%= user.username %></h3>
+
+      <div id="homebtn" class="row align-items-center">
+        <a class="btn btn-primary btn-block" href="/applications/new"
+          >Add Application</a
+        >
+      </div>
+
+      <div id="homebtn" class="row align-items-center">
+        <a class="btn btn-primary btn-block" href="/companies/"
+          >View All Companies</a
+        >
+      </div>
+      <div id="homebtn" class="row align-items-center">
+        <a class="btn btn-primary btn-block" href="/applications/"
+          >All Applications</a
+        >
+      </div>
+      <!-- logout -->
+      <form action="/logout?_method=DELETE" method="POST">
+        <div id="homebtn" class="row align-items-center">
+          <input
+            class="btn btn-primary btn-block"
+            type="submit"
+            value="Logout"
+          />
+        </div>
+      </form>
+
+      <% } else { %>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <a class="btn btn-primary btn-block" href="/register">Register</a>
+        </div>
+        <div class="col-4">
+          <a class="btn btn-primary btn-block" href="/login">Login</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
 </html>

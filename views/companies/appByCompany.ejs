@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Partials/head.ejs -->
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <!-- NavBar -->
+  <%- include('../partials/navbar.ejs') %>
+
+  <body>
+    <h1 class="text-center">Companies</h1>
+    <div class="list-group allApp-list allapp-company app-form">
+      <% companies.forEach(company => { %>
+
+      <a
+        id="companybtn"
+        href="/companies/<%= company._id %>"
+        class="list-group-item active allapp-company"
+        aria-current="true"
+      >
+        <%= company.name.toUpperCase() %>
+      </a>
+
+      <% }) %> <% if(companies.length === 0) { %>
+      <p>There are no Companies available yet.</p>
+      <% } %>
+    </div>
+  </body>
+</html>
