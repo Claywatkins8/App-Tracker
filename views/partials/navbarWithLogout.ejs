@@ -1,0 +1,50 @@
+<!-- views/partials/navbar.ejs -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="/">AppTracker</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/companies/">Companies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/applications/">All Applications</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/applications/new">New Application</a>
+            </li>
+            <li class="nav-item active">
+             
+          </ul>  
+       
+        </div>
+      
+          <!-- longin test -->
+        <ul class="nav justify-content-end">
+      
+        <form action="/logout?_method=DELETE" method="POST">
+          <input
+            class="btn btn-primary btn btn-light"
+            type="submit"
+            value="Logout"
+          />
+        </form>
+    </ul>
+        
+      </nav>
+      
